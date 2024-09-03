@@ -6,12 +6,20 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './header/header.component';
 import { NavComponent } from './nav/nav.component';
+import { HomeComponent } from './home/home.component';
+import { PortifolioComponent } from './portifolio/portifolio.component';
+import { ResumeComponent } from './resume/resume.component';
+import { ContatoComponent } from './contato/contato.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    NavComponent
+    NavComponent,
+    HomeComponent,
+    PortifolioComponent,
+    ResumeComponent,
+    ContatoComponent
   ],
   imports: [
     BrowserModule,
