@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Project } from '../model/Project';
 
 @Component({
   selector: 'app-project-car',
@@ -6,7 +7,6 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./project-car.component.css']
 })
 export class ProjectCarComponent {
-  @Input() projectName: string = "";
-  @Input() projectDescription: string = "";
-  @Input() projectLang: string = "";
+  @Input() project = {} as Project;
+
 }
