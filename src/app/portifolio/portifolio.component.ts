@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
-import { Project } from '../model/Project';
-import { Tag } from '../model/Tag';
+import { Project } from '../_model/Project';
+import { Tag } from '../_model/Tag';
+import { ProjectsService } from '../_services/projects.service';
 
 
 @Component({
@@ -9,20 +10,14 @@ import { Tag } from '../model/Tag';
   templateUrl: './portifolio.component.html',
   styleUrls: ['./portifolio.component.css']
 })
-export class PortifolioComponent {
+export class PortifolioComponent implements OnInit{
 
-  project: Project = {
-    id: 0,
-    name: 'nome de um projeto aqui',
-    sumary: 'Descrição do projeto aqui',
-    description: '',
-    projectLink: '',
-    tags: [Tag.ANGULAR, Tag.TYPESCRIPT],
-    pictures: [ ]
+  projects = {} as Project[]
 
-  }
-
-  constructor(private titleservice: Title) {
+  constructor(private titleservice: Title, private projectService: ProjectsService) {
     this.titleservice.setTitle('Gustavo Batista - Portifólio')
+  }
+  ngOnInit(): void {
+    this.projects = this.projectService.getProjects();
   }
 }

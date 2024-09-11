@@ -11,7 +11,10 @@ import { PortifolioComponent } from './portifolio/portifolio.component';
 import { ResumeComponent } from './resume/resume.component';
 import { ContatoComponent } from './contato/contato.component';
 import { ProjectCarComponent } from './project-car/project-car.component';
-
+import { ModalModule } from 'ngx-bootstrap/modal';
+import { ProjectModelComponent } from './project-model/project-model.component';
+import { CarouselModule } from 'ngx-bootstrap/carousel'
+import { AccordionModule } from 'ngx-bootstrap/accordion'
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,12 +24,16 @@ import { ProjectCarComponent } from './project-car/project-car.component';
     PortifolioComponent,
     ResumeComponent,
     ContatoComponent,
-    ProjectCarComponent
+    ProjectCarComponent,
+    ProjectModelComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ModalModule.forRoot(),
+    CarouselModule.forRoot(),
+    AccordionModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]
